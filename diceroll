@@ -1,0 +1,27 @@
+import random
+from sys import exit
+
+
+#Roll some dice and print results
+def roll_dice():
+
+  dice = 0
+  exit = False
+  while exit == False:
+    dice = random.randrange(1, 6)
+    print ("You rolled a: " + str(dice))
+    play_again()
+    exit = True
+
+#Ask if user wants to play again, continue in while loop if so
+def play_again():
+  answer = input("Would you like to roll again? (y/n)")
+  if answer == "y":
+    roll_dice()
+  elif answer != "y" and answer != "n":
+    print("Invalid answer.")
+    play_again()
+
+#Get the party started
+print ("Welcome to dice roll simulator.")
+roll_dice()
